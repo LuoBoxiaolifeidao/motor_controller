@@ -1,0 +1,18 @@
+shensuo_robot:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100
+      use_sim_time: false
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      s_curve_controller:
+        type: s_curve_planner/SCurveTrajectoryController
+
+  joint_state_broadcaster:
+    ros__parameters:
+      publish_rate: 50.0
+
+  s_curve_controller:
+    ros__parameters: {}

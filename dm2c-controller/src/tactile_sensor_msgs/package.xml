@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2"> <!-- ROS1 Melodic使用format 2 -->
+  <name>tactile_sensor_msgs</name>
+  <version>0.0.0</version>
+  <description>Custom tactile sensor messages for ROS1 Melodic</description>
+  <maintainer email="zengfanyou@tashantec.com">zengfanyou</maintainer>
+  <license>TODO: License declaration</license>
+
+  <!-- ROS1构建依赖 -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <!-- ROS1运行依赖 -->
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <!-- 作者/维护者（可选） -->
+  <author>zengfanyou</author>
+</package>

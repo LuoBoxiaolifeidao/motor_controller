@@ -1,0 +1,7 @@
+<library path="mppi_controller">
+  <class name="mppi_controller/MPPIController"
+         type="mppi_controller::MPPIController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>MPPI + FCL collision-avoidance controller for dual-arm robot</description>
+  </class>
+</library>

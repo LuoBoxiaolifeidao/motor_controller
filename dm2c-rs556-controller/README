@@ -1,0 +1,52 @@
+本项目为用于控制雷赛 DM2C-RS556 步进驱动器的 C++ 项目
+
+硬件要求：
+    DM2C-RS556 控制器
+    步进电机
+    开关电源
+    USB To 485 驱动器
+
+软件依赖：
+    windows和linux
+    C++11或以上
+    cmake 3.10
+
+主要功能：
+    绝对位置模式控制电机
+        单寄存器控制      DM2CController::moveToAbsolutePosition(...)
+        多寄存器控制      DM2CController::moveToAbsolutePositionBatch(...)
+    相对位置模式控制电机
+        单寄存器控制      DM2CController::moveToRelativePosition(...)
+        多寄存器控制      DM2CController::moveToRelativePositionBatch(...)
+    速度模式控制电机：目前仅支持正转
+        单寄存器控制      DM2CController::startVelocityMode(...)
+        多寄存器控制      DM2CController::startVelocityModeBatch(...)
+
+    状态获取             DM2CController::readStatus()
+        bit0 = 1        故障
+        bit1 = 1        使能
+        bit2 = 1        运行
+        bit3 = 1        无效
+        bit4 = 1        指令完成
+        bit5 = 1        路径完成
+        bit6 = 1        回零完成
+    
+    错误码获取            DM2CController::readAlarm()
+        0x01            过流
+        0x02            过压
+        0x05            字节数错误码故障
+        0x40            电流采样回路故障
+        0x80            锁轴(缺相)故障
+        0x200           EEPROM故障
+        0x100           参数自整定故障
+        0x009           输入IO配置重复
+
+    获取当前命令位置       DM2CController::readCommandPosition()
+    获取当前实际位置       DM2CController::readActualPosition()     
+    获取当前实际速度       DM2CController::readActualSpeed()
+    获取任意寄存器         DM2CController::readRegister(...)
+
+    设置当前位置为0点      DM2CController::setCurrentPositionAsZero()
+
+
+

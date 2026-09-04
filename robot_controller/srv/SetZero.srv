@@ -1,0 +1,4 @@
+string name
+---
+uint16 status
+uint16 error_code

@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="shensuo-robot_urdf_20260623">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="9.96202877811463E-05 -0.0374730745189486 0.374727291748393"
+        rpy="0 0 0" />
+      <mass
+        value="16.094025254935" />
+      <inertia
+        ixx="0.603366967141849"
+        ixy="-0.000126452810354697"
+        ixz="-1.7366089952739E-05"
+        iyy="0.622620560447668"
+        iyz="-7.64692245855643E-06"
+        izz="0.199432229861947" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="l_post_Link">
+    <inertial>
+      <origin
+        xyz="0.000168440832859135 0.083823637125879 0.0467998711089452"
+        rpy="0 0 0" />
+      <mass
+        value="1.00689598270326" />
+      <inertia
+        ixx="0.00139675962618536"
+        ixy="1.00054056738039E-06"
+        ixz="-8.79889633446998E-07"
+        iyy="0.00100049432210797"
+        iyz="0.000105026049714558"
+        izz="0.001004666399493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_post_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_post_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_post_Joint"
+    type="prismatic">
+    <origin
+      xyz="-0.1275 -0.1065 0.34054"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="l_post_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.95"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_shoulder_Link">
+    <inertial>
+      <origin
+        xyz="-0.0120859631726165 0.0588078131256135 0.0845090825424934"
+        rpy="0 0 0" />
+      <mass
+        value="1.32807047398895" />
+      <inertia
+        ixx="0.00677909535913547"
+        ixy="-4.38474394559505E-05"
+        ixz="6.28960403610146E-05"
+        iyy="0.00273927640307577"
+        iyz="-0.00078313458433325"
+        izz="0.0046244568018514" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_shoulder_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_shoulder_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_shoulder_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.119 0.0575"
+      rpy="0 0 0" />
+    <parent
+      link="l_post_Link" />
+    <child
+      link="l_shoulder_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_arm_LinkA">
+    <inertial>
+      <origin
+        xyz="-2.94439907589927E-05 -0.000722196129463393 -0.0874585899800276"
+        rpy="0 0 0" />
+      <mass
+        value="0.198568615146046" />
+      <inertia
+        ixx="0.000497359494892518"
+        ixy="-9.03672305894045E-13"
+        ixz="-2.68047160454837E-12"
+        iyy="0.000487226439641468"
+        iyz="-1.16072506099277E-06"
+        izz="0.00014919381973095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_arm_LinkA.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_arm_LinkA.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_arm_JointA"
+    type="prismatic">
+    <origin
+      xyz="0.0002 0.254 0.0328"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="l_shoulder_Link" />
+    <child
+      link="l_arm_LinkA" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.12"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_arm_LinkB">
+    <inertial>
+      <origin
+        xyz="-0.000200000250139498 -0.000909416027228993 -0.0958514908733203"
+        rpy="0 0 0" />
+      <mass
+        value="0.165382831047976" />
+      <inertia
+        ixx="0.000442816278382281"
+        ixy="-5.79950540508347E-13"
+        ixz="-2.44452968291723E-12"
+        iyy="0.000439361149614896"
+        iyz="-1.24442534761162E-06"
+        izz="7.42524540979401E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_arm_LinkB.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_arm_LinkB.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_arm_JointB"
+    type="prismatic">
+    <origin
+      xyz="0 0 0.015"
+      rpy="0 0 0" />
+    <parent
+      link="l_arm_LinkA" />
+    <child
+      link="l_arm_LinkB" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.135"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_arm_LinkC">
+    <inertial>
+      <origin
+        xyz="8.84709571054021E-05 0.00483951047668146 -0.0375911201713277"
+        rpy="0 0 0" />
+      <mass
+        value="0.245897789429243" />
+      <inertia
+        ixx="0.000461612580043068"
+        ixy="-2.1332362197759E-11"
+        ixz="-3.61577788891476E-09"
+        iyy="0.000469118400404751"
+        iyz="-1.81870950944502E-05"
+        izz="8.21221973669478E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_arm_LinkC.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_arm_LinkC.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_arm_JointC"
+    type="prismatic">
+    <origin
+      xyz="0 0 0.011"
+      rpy="0 0 0" />
+    <parent
+      link="l_arm_LinkB" />
+    <child
+      link="l_arm_LinkC" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.15"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_wrist_p_Link">
+    <inertial>
+      <origin
+        xyz="-2.4718239186039E-07 0.0392864464319957 0.0329458499410903"
+        rpy="0 0 0" />
+      <mass
+        value="0.108663210624179" />
+      <inertia
+        ixx="8.45142303007627E-05"
+        ixy="-5.5818211358673E-10"
+        ixz="5.87319759070936E-11"
+        iyy="8.52437863958248E-05"
+        iyz="-1.47702185268609E-05"
+        izz="4.70833205076817E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_wrist_p_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_wrist_p_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wrist_p_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.0002 0.0368 0.057"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="l_arm_LinkC" />
+    <child
+      link="l_wrist_p_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_wrist_y_Link">
+    <inertial>
+      <origin
+        xyz="0.00839545050947801 0.0189088583384429 0.0226937867735656"
+        rpy="0 0 0" />
+      <mass
+        value="0.0907792206932738" />
+      <inertia
+        ixx="3.84860651574792E-05"
+        ixy="-2.40286416762523E-06"
+        ixz="-2.6509215136691E-06"
+        iyy="5.83222307258537E-05"
+        iyz="-7.13474464172594E-06"
+        izz="4.91229003106038E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_wrist_y_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_wrist_y_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wrist_y_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.027 0.0565"
+      rpy="1.5708 0 0" />
+    <parent
+      link="l_wrist_p_Link" />
+    <child
+      link="l_wrist_y_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_wrist_r_Link">
+    <inertial>
+      <origin
+        xyz="-0.000852799601372911 -0.0462820053507422 0.111068680336747"
+        rpy="0 0 0" />
+      <mass
+        value="1.72866862571973" />
+      <inertia
+        ixx="0.000877115742751073"
+        ixy="-2.90806260570483E-07"
+        ixz="-1.49007495438894E-05"
+        iyy="0.00178269527643493"
+        iyz="5.22650286109182E-06"
+        izz="0.00135033039714642" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_wrist_r_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l_wrist_r_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wrist_r_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.042 0.027"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="l_wrist_y_Link" />
+    <child
+      link="l_wrist_r_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l-hand-l-finger_Link">
+    <inertial>
+      <origin
+        xyz="-0.0332545331618398 0.130610222714582 -2.39752460956533E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0604320826390323" />
+      <inertia
+        ixx="0.000117897354726363"
+        ixy="5.63193517603517E-05"
+        ixz="9.12579283949784E-09"
+        iyy="3.57218614506588E-05"
+        iyz="-1.59425690009066E-08"
+        izz="0.00014907193142611" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l-hand-l-finger_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l-hand-l-finger_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l-hand-l-finger_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.044 0 0.112"
+      rpy="1.5708 0 0" />
+    <parent
+      link="l_wrist_r_Link" />
+    <child
+      link="l-hand-l-finger_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.785"
+      upper="0"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="l-hand-r-finger_Link">
+    <inertial>
+      <origin
+        xyz="0.0332545331641958 0.130610222722116 2.39752364356027E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0604320826487986" />
+      <inertia
+        ixx="0.000117897354727255"
+        ixy="-5.63193517606094E-05"
+        ixz="9.1257926257959E-09"
+        iyy="3.57218614511334E-05"
+        iyz="1.59425685602219E-08"
+        izz="0.000149071931426736" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l-hand-r-finger_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/l-hand-r-finger_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l-hand-r-finger_Joint"
+    type="revolute">
+    <origin
+      xyz="0.044 0 0.112"
+      rpy="1.5708 0 0" />
+    <parent
+      link="l_wrist_r_Link" />
+    <child
+      link="l-hand-r-finger_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.785"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_post_Link">
+    <inertial>
+      <origin
+        xyz="-9.1015874991357E-05 0.0647072948739479 0.0561252118011265"
+        rpy="0 0 0" />
+      <mass
+        value="1.30643195817497" />
+      <inertia
+        ixx="0.0026132206854653"
+        ixy="-2.3199560266747E-07"
+        ixz="1.61603952790554E-07"
+        iyy="0.00217084345693209"
+        iyz="0.00010719079224229"
+        izz="0.00152753085585673" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_post_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_post_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_post_Joint"
+    type="prismatic">
+    <origin
+      xyz="0.1275 -0.1065 0.34054"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r_post_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.95"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_shoulder_Link">
+    <inertial>
+      <origin
+        xyz="0.0103868317411159 0.0675375319258415 0.0773691506682368"
+        rpy="0 0 0" />
+      <mass
+        value="1.48811923253884" />
+      <inertia
+        ixx="0.00799685357152542"
+        ixy="4.37327121157861E-05"
+        ixz="-6.29456175019341E-05"
+        iyy="0.00304055434877087"
+        iyz="-0.00099516741926567"
+        izz="0.00572538656984074" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_shoulder_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_shoulder_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_shoulder_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.119 0.0575"
+      rpy="0 0 0" />
+    <parent
+      link="r_post_Link" />
+    <child
+      link="r_shoulder_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="0"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_arm_LinkA">
+    <inertial>
+      <origin
+        xyz="-2.94439907589927E-05 -0.000722196129463226 -0.0874585899800276"
+        rpy="0 0 0" />
+      <mass
+        value="0.198568615146045" />
+      <inertia
+        ixx="0.000497359494892514"
+        ixy="-9.03672155335185E-13"
+        ixz="-2.68047174539986E-12"
+        iyy="0.000487226439641465"
+        iyz="-1.16072506099303E-06"
+        izz="0.000149193819730949" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_arm_LinkA.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_arm_LinkA.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_arm_JointA"
+    type="prismatic">
+    <origin
+      xyz="0 0.254 0.033"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="r_shoulder_Link" />
+    <child
+      link="r_arm_LinkA" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.12"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_arm_LinkB">
+    <inertial>
+      <origin
+        xyz="-2.50139520208137E-10 -0.000709416027229126 -0.0958514908733202"
+        rpy="0 0 0" />
+      <mass
+        value="0.165382831047976" />
+      <inertia
+        ixx="0.000442816278382279"
+        ixy="-5.79950664989103E-13"
+        ixz="-2.44452970860615E-12"
+        iyy="0.000439361149614895"
+        iyz="-1.24442534761165E-06"
+        izz="7.42524540979399E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_arm_LinkB.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_arm_LinkB.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_arm_JointB"
+    type="prismatic">
+    <origin
+      xyz="0 0 0.015"
+      rpy="0 0 0" />
+    <parent
+      link="r_arm_LinkA" />
+    <child
+      link="r_arm_LinkB" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.135"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_arm_LinkC">
+    <inertial>
+      <origin
+        xyz="0.000288470957106657 0.00503951047668127 -0.0375911201713273"
+        rpy="0 0 0" />
+      <mass
+        value="0.245897789429247" />
+      <inertia
+        ixx="0.000461612580043074"
+        ixy="-2.13323620459034E-11"
+        ixz="-3.61577788867202E-09"
+        iyy="0.000469118400404757"
+        iyz="-1.81870950944503E-05"
+        izz="8.2122197366949E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_arm_LinkC.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25 0.25 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_arm_LinkC.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_arm_JointC"
+    type="prismatic">
+    <origin
+      xyz="0 0 0.011"
+      rpy="0 0 0" />
+    <parent
+      link="r_arm_LinkB" />
+    <child
+      link="r_arm_LinkC" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.15"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_wrist_p_Link">
+    <inertial>
+      <origin
+        xyz="-2.47182391582834E-07 0.048661851455175 0.0329458499410902"
+        rpy="0 0 0" />
+      <mass
+        value="0.108663210624179" />
+      <inertia
+        ixx="8.45142303007624E-05"
+        ixy="-5.58182113612071E-10"
+        ixz="5.87319758989902E-11"
+        iyy="8.52437863958248E-05"
+        iyz="-1.47702185268607E-05"
+        izz="4.70833205076814E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_wrist_p_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_wrist_p_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wrist_p_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.037 0.066375"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="r_arm_LinkC" />
+    <child
+      link="r_wrist_p_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_wrist_y_Link">
+    <inertial>
+      <origin
+        xyz="0.00839545050947954 0.0189088583384427 0.0226937867735656"
+        rpy="0 0 0" />
+      <mass
+        value="0.0907792206932739" />
+      <inertia
+        ixx="3.84860651574791E-05"
+        ixy="-2.40286416762526E-06"
+        ixz="-2.65092151366909E-06"
+        iyy="5.83222307258537E-05"
+        iyz="-7.13474464172597E-06"
+        izz="4.91229003106037E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_wrist_y_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_wrist_y_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wrist_y_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.036375 0.0565"
+      rpy="1.5708 0 0" />
+    <parent
+      link="r_wrist_p_Link" />
+    <child
+      link="r_wrist_y_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_wrist_r_Link">
+    <inertial>
+      <origin
+        xyz="-0.00085279959689441 -0.0462820053638407 0.111068680347235"
+        rpy="0 0 0" />
+      <mass
+        value="1.72866862509409" />
+      <inertia
+        ixx="0.00087711574246006"
+        ixy="-2.9080582366916E-07"
+        ixz="-1.4900749698105E-05"
+        iyy="0.00178269527547405"
+        iyz="5.22650272714298E-06"
+        izz="0.00135033039630659" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_wrist_r_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r_wrist_r_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wrist_r_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.042 0.027"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="r_wrist_y_Link" />
+    <child
+      link="r_wrist_r_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r-hand-l-finger_Link">
+    <inertial>
+      <origin
+        xyz="-0.0332545333732682 0.130610223321758 -2.39759075404411E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.06043208338163" />
+      <inertia
+        ixx="0.000117897354769062"
+        ixy="5.63193517732483E-05"
+        ixz="9.12577836507249E-09"
+        iyy="3.57218614831653E-05"
+        iyz="-1.59425476835622E-08"
+        izz="0.00014907193145386" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r-hand-l-finger_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r-hand-l-finger_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r-hand-l-finger_Joint"
+    type="revolute">
+    <origin
+      xyz="-0.044 0 0.112"
+      rpy="1.5708 0 0" />
+    <parent
+      link="r_wrist_r_Link" />
+    <child
+      link="r-hand-l-finger_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.785"
+      upper="0"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="r-hand-r-finger_Link">
+    <inertial>
+      <origin
+        xyz="0.0332545333694492 0.130610223311162 2.39758860426376E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0604320833695968" />
+      <inertia
+        ixx="0.00011789735476829"
+        ixy="-5.63193517729576E-05"
+        ixz="9.12577837570035E-09"
+        iyy="3.57218614826356E-05"
+        iyz="1.5942547550252E-08"
+        izz="0.000149071931453314" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r-hand-r-finger_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/r-hand-r-finger_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r-hand-r-finger_Joint"
+    type="revolute">
+    <origin
+      xyz="0.044 0 0.112"
+      rpy="1.5708 0 0" />
+    <parent
+      link="r_wrist_r_Link" />
+    <child
+      link="r-hand-r-finger_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.785"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="camera_Link">
+    <inertial>
+      <origin
+        xyz="0.00275458438922649 0.0110554326396107 0.017686574928637"
+        rpy="0 0 0" />
+      <mass
+        value="0.068585399336699" />
+      <inertia
+        ixx="2.02274703163177E-05"
+        ixy="8.4452654671802E-08"
+        ixz="3.08607465938727E-08"
+        iyy="7.28517609615631E-06"
+        iyz="-4.88898207073653E-09"
+        izz="1.60374054456053E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/camera_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/camera_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_y_Joint"
+    type="revolute">
+    <origin
+      xyz="0.0004826 -0.096795 1.4848"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="camera_Link2">
+    <inertial>
+      <origin
+        xyz="-7.57172102794357E-14 0.0360057830577723 0.0229478014664453"
+        rpy="0 0 0" />
+      <mass
+        value="0.0591389916538141" />
+      <inertia
+        ixx="3.70295951058112E-05"
+        ixy="-8.09573888170195E-23"
+        ixz="-1.34380627801893E-18"
+        iyy="3.68884623246185E-05"
+        iyz="3.93650919599149E-09"
+        izz="5.82889749053171E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/camera_Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.7 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://shensuo_robot_urdf/meshes/camera_Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_p_Joint"
+    type="revolute">
+    <origin
+      xyz="0.0227 -0.0001 0.01855"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="camera_Link" />
+    <child
+      link="camera_Link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>

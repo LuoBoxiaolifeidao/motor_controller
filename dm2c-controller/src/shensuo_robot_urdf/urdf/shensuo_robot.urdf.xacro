@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="shensuo_robot">
+
+  <!-- 机器人本体（links + joints） -->
+  <xacro:include filename="$(find shensuo_robot_urdf)/urdf/shensuo_robot_body.xacro"/>
+
+  <!-- ros2_control 配置 -->
+  <xacro:include filename="$(find shensuo_robot_urdf)/urdf/shensuo_robot_control.xacro"/>
+
+  <!-- gazebo 插件 -->
+  <xacro:include filename="$(find shensuo_robot_urdf)/urdf/shensuo_robot_gazebo.xacro"/>
+
+  <xacro:macro name="shensuo_robot" params="name:=shensuo_robot use_gazebo:=false">
+
+    <xacro:if value="${use_gazebo}">
+      <xacro:property name="ros2_control_name" value="IgnitionSystem"/>
+      <xacro:property name="plugin_type" value="gz_ros2_control/GazeboSimSystem"/>
+    </xacro:if>
+    <xacro:unless value="${use_gazebo}">
+      <xacro:property name="ros2_control_name" value="MockSystem"/>
+      <xacro:property name="plugin_type" value="mock_components/GenericSystem"/>
+    </xacro:unless>
+
+    <xacro:shensuo_robot_control use_gazebo="${use_gazebo}"
+                                  ros2_control_name="${ros2_control_name}"
+                                  plugin_type="${plugin_type}"/>
+    <xacro:shensuo_robot_gazebo/>
+    <xacro:shensuo_robot_body/>
+
+  </xacro:macro>
+
+  <xacro:shensuo_robot name="shensuo_robot" use_gazebo="$(arg use_gazebo)"/>
+</robot>

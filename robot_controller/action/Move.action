@@ -1,0 +1,16 @@
+string name
+uint16 mode
+int32 target_position
+int16 target_speed
+uint16 accel_time
+uint16 decel_time
+---
+uint32 final_current_position
+int16 final_speed
+uint16 final_status
+uint16 final_error_code
+---
+uint32 current_position
+int16 current_speed
+uint16 status
+uint16 error_code

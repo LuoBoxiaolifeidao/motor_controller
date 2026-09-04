@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+project(mwd485_test)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(MWD_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(DM2C_DIR ${MWD_DIR}/../DM2C)
+
+include_directories(${MWD_DIR} ${DM2C_DIR})
+
+add_executable(mwd485_test
+    ${MWD_DIR}/MWD485Controller.cpp
+    ${MWD_DIR}/MWD485Server.cpp
+    ${DM2C_DIR}/SerialPort.cpp
+)
+
+target_link_libraries(mwd485_test pthread)

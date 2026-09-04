@@ -1,0 +1,31 @@
+# ---- Build artifacts ----
+build/
+devel/
+install/
+bin/
+logs/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+*.o
+*.so
+*.a
+
+# Catkin workspace markers
+.catkin_workspace
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Flattened nested git repos (kept locally for history, not committed)
+.git.bak/
+
+# Editor
+.idea/

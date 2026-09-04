@@ -1,0 +1,18 @@
+shensuo_robot:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100
+      use_sim_time: false
+
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
+      mppi_controller:
+        type: mppi_controller/MPPIController
+
+  joint_state_broadcaster:
+    ros__parameters:
+      publish_rate: 50.0
+
+  mppi_controller:
+    ros__parameters: {}

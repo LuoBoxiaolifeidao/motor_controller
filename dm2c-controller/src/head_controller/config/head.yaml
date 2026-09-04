@@ -1,0 +1,27 @@
+# Head controller config (two Feetech SMS/STS servos)
+# target_pos = base_deg + clamp(input_value, offset_min, offset_max)
+# pos = deg * 4096 / 360
+port: "/dev/ttysWK0"
+baudrate: 115200
+
+yaw:
+  id: 31
+  base_deg: 90
+  offset_min: -45
+  offset_max: 45
+  speed: 100
+  accel: 100
+  tolerance: 15
+
+pitch:
+  id: 30
+  base_deg: 270
+  offset_min: -90
+  offset_max: 0
+  speed: 100
+  accel: 100
+  tolerance: 15
+
+home:
+  yaw: 0
+  pitch: -26

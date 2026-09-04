@@ -1,0 +1,83 @@
+version: "2.0.0"
+
+motors:
+  # ===== 左臂电机配置 =====
+  # 关节顺序: [0]升降立柱 DM2C  [1]肩部 MWD485  [2]伸展 MWD485  [3][4][5]腕部 飞特
+  left_dm2c:
+    id: 2
+    port: "/dev/ttyACM0"
+    baudrate: 38400
+    min_speed: 5.0
+    max_speed: 60.0
+    max_accel: 200
+    dead_zone: 3.0
+
+  shoulder_485:
+    id: 7
+    port: "/dev/ttysWK0"
+    baudrate: 115200
+    gear_ratio: 10.0
+    min_speed: 1.0
+    max_speed: 5.0
+    max_accel: 150
+    dead_zone: 3.0
+    j_max: 50
+
+  extend_485:
+    id: 8
+    port: "/dev/ttysWK0"
+    baudrate: 115200
+    gear_ratio: 6.0
+    min_speed: 1.0
+    max_speed: 40.0
+    max_accel: 70
+    dead_zone: 2.0
+    j_max: 50
+
+  left_ft:
+    ids: [10, 11, 12]
+    port: "/dev/ttysWK0"
+    baudrate: 115200
+    min_speed: [3, 3, 3]
+    max_speed: [20, 20, 20]
+    max_accel: [20, 20, 20]
+    dead_zone: [3, 3, 3]
+    j_max: [30, 30, 30]
+
+  left_gripper:
+    ids: 23
+    port: "/dev/ttysWK0"
+    baudrate: 115200
+    open: 1748
+    close: 900
+    dead_zone: 40
+
+
+  # ===== 右臂电机配置 (暂未使用) =====
+  # right_dm2c:
+  #   id: 1
+  #   port: "/dev/ttyACM0"
+  #   baudrate: 38400
+  #   max_speed: 80.0
+  #   max_accel: 100
+  #
+  # right_mwd:
+  #   id: 1
+  #   interface: "can1"
+  #   bitrate: 1000000
+  #   max_speed: 180.0
+  #   max_accel: 500
+  #
+  # right_ak:
+  #   id: 1
+  #   interface: "can1"
+  #   bitrate: 1000000
+  #   max_speed: 700.0
+  #   max_accel: 500
+  #
+  # right_ft:
+  #   ids: [10, 11, 12]
+  #   port: "/dev/ttysWK1"
+  #   baudrate: 115200
+  #   max_speed: [300, 300, 300]
+  #   max_accel: [50, 50, 50]

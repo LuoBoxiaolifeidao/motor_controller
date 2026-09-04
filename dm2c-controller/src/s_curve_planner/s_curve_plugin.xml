@@ -1,0 +1,7 @@
+<library path="s_curve_controller">
+  <class name="s_curve_planner/SCurveTrajectoryController"
+         type="s_curve_planner::SCurveTrajectoryController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>S-Curve synced trajectory controller for dual-arm robot</description>
+  </class>
+</library>

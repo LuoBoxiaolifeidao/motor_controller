@@ -1,0 +1,7 @@
+string name
+---
+uint32 command_position
+uint32 current_position
+uint16 current_speed
+uint16 status
+uint16 error_code

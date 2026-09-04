@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="shensuo_robot_gazebo">
+    <gazebo>
+      <plugin filename="libgz_ros2_control-system.so"
+              name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <position_proportional_gain>1.0</position_proportional_gain>
+        <parameters>$(find shensuo_robot_urdf)/config/ros2_controllers.yaml</parameters>
+      </plugin>
+    </gazebo>
+
+    <gazebo>
+      <plugin filename="ignition-gazebo-detachable-joint-system"
+              name="ignition::gazebo::systems::DetachableJoint">
+        <parent_link>l_wrist_r_Link</parent_link>
+        <child_model>Cup</child_model>
+        <child_link>link</child_link>
+        <attach_topic>/left_gripper/attach</attach_topic>
+        <detach_topic>/left_gripper/detach</detach_topic>
+      </plugin>
+    </gazebo>
+
+    <gazebo>
+      <plugin filename="ignition-gazebo-detachable-joint-system"
+              name="ignition::gazebo::systems::DetachableJoint">
+        <parent_link>r_wrist_r_Link</parent_link>
+        <child_model>CupR</child_model>
+        <child_link>link</child_link>
+        <attach_topic>/right_gripper/attach</attach_topic>
+        <detach_topic>/right_gripper/detach</detach_topic>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+
+</robot>
